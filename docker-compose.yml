@@ -1,0 +1,16 @@
+services:
+    frontend:
+        build: ./Website Code/HyacintProject
+        image: hyacinth_vue_frontend
+        container_name: hyacinth_prediciton_frontend
+        depends_on:
+            - backend
+        ports:
+            - 5173:5173
+
+    backend:
+        build: ./Backend Code
+        image: hyacinth_fastapi_backend
+        container_name: hyacinth_prediction_backend
+        ports:
+            - 8000:8000
